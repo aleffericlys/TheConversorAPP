@@ -7,7 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-import {Moedas, Home, Medidas, Cripto, Login, Perfil} from './index';
+import {Moedas, Home, Medidas, Cripto, Login, Perfil, Cadastro} from './index';
 import { View } from 'react-native';
 
 const Tab = createMaterialTopTabNavigator();
@@ -64,7 +64,22 @@ const HomeTabNavigator = () => {
 					},
 				}}
 			/>
-			 
+			<Stack.Screen
+				name="Cadastro"
+				component={Cadastro}
+				options={{
+					headerShown: true,
+					title: 'Cadastro',
+					headerStyle: {
+						backgroundColor: '#62b013',
+					},
+					headerTintColor: '#fff',
+					headerTitleStyle: {
+						fontWeight: 'bold',
+						fontSize: 25,
+					},
+				}}
+			/>
 		</Stack.Navigator>
 	);
 };
@@ -77,7 +92,7 @@ const MoedasTabNavigator = () => {
 				component={Moedas}
 				options={{
 					headerShown: true,
-					title: 'Moedas',
+					title: 'Conversor de Moedas',
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
@@ -99,7 +114,7 @@ const CriptoTabNavigator = () => {
 				component={Cripto}
 				options={{
 					headerShown: true,
-					title: 'Cripto',
+					title: 'Conversor de Cripto',
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
@@ -121,7 +136,7 @@ const MedidasTabNavigator = () => {
 				component={Medidas}
 				options={{
 					headerShown: true,
-					title: 'Medidas',
+					title: 'Conversor de Medidas',
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
@@ -153,7 +168,7 @@ const Navigation = () => {
 		
 		>
         <Tab.Screen
-			name='Home'
+			name='home'
 			component={HomeTabNavigator}
 			options={{
 				headerShown: true,

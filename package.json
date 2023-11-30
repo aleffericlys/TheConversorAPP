@@ -9,7 +9,9 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "1.18.2",
     "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-picker/picker": "2.4.10",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/material-top-tabs": "^6.6.5",
     "@react-navigation/native": "^6.1.9",
@@ -26,8 +28,7 @@
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
     "react-native-vector-icons": "^10.0.2",
-    "sequelize": "^6.35.0",
-    "@react-native-async-storage/async-storage": "1.18.2"
+    "sequelize": "^6.35.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -19,13 +19,14 @@ export default function Home({navigation}) {
         		<Entypo name="login" size={30} color="#000" />
 				<Text>Login</Text>
       		</TouchableOpacity>
-			
+
+
 			<TouchableOpacity
 				onPress={() => navigation.navigate('Perfil')}
 				style={[css.homePButton, css.login_button]}
 			>
         		<MaterialIcons name="contact-page" size={30} color="#000" />
-				<Text>Login</Text>
+				<Text>Perfil</Text>
       		</TouchableOpacity>
 			<Text style={css.textPage}>home</Text>
 		</View>

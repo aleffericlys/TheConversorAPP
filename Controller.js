@@ -26,17 +26,41 @@ app.post('/login', async (req, res)=>{
 })
 
 
-app.get('/createUser', async (req, res)=>{
+app.post('/createUser', async (req, res)=>{
+
+	if(req.body.firstName === undefined || req.body.lastName === undefined || req.body.email === undefined || req.body.password === undefined){
+		res.send(JSON.stringify('Campos não preenchidos!'));
+	}else{
+		if(await user.findOne({where:{email: req.body.email}})){
+			res.send(JSON.stringify('Email já cadastrado!'));
+		}else{
+			let create = await user.create({
+				firstName: req.body.firstName,
+				lastName: req.body.lastName,
+				email: req.body.email,
+				password: req.body.password,
+				createdAt: new Date(),
+				updatedAt: new Date()
+			});
+			res.send(create);
+		}
+	}
+});
+
+app.get('/createUsers', async (req, res)=>{
 	let create = await user.create({
-		firstName: 'aleff',
-		lastName: 'araújo',
-		email: 'aleff@aleff',
-		password: '123',
+		// firstName: req.body.firstName,
+		// lastName: req.body.lastName,
+		// email: req.body.email,
+		// password: req.body.password,
+		firstName: 'joao',
+		lastName: 'silva',
+		email: 'j@ss',
+		password: '1234',
 		createdAt: new Date(),
 		updatedAt: new Date()
 	});
-	res.send('Usuario criado com sucesso!');
-});
+})	,
 
 app.get('/createFav', async (req, res)=>{
 	let create = await favorito.create({

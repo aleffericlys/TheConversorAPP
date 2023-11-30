@@ -8,6 +8,13 @@ const css = StyleSheet.create({
 	  alignItems: 'center',
 	  justifyContent: 'center',
 	},
+	rowContainer: {
+		
+		flexDirection: 'row',
+		// backgroundColor: '#fff',
+		alignItems: 'center',
+		justifyContent: 'center',
+	  },
 	textPage: {
 		backgroundColor: '#ff0',
 		padding: 20,
@@ -59,6 +66,28 @@ const css = StyleSheet.create({
 		right: 80,
 		padding: 10,
 		textAlign: 'center',
+	},
+	criarconta:{
+		color: 'red',
+	},
+	picker:{
+		width: '40%',
+		height: 50,
+		backgroundColor: '#333',
+		marginBottom: 15,
+		borderWidth: 5,
+		color: '#fff',
+		textAlign: 'center',
+		tintColor: '#000',
+	},
+	inputConversao:{
+		width: '40%',
+		height: 57,
+		backgroundColor: '#fff',
+		borderColor: '#000',
+		borderWidth: 2,
+		marginBottom: 15,
+		fontSize: 25,
 	},
   });
   export{css}
