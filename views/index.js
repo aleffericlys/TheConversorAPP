@@ -1,9 +1,10 @@
 import Moedas from './moedas';
 import Home from './home';
-import Cripto from './cripto';
+import MoneyConv from './moneyConv';
 import Medidas from './medidas';
 import Login from './login';
 import Perfil from './perfil';
 import Cadastro from './cadastro';
+import MedConv from './medConv';
 
-export {Moedas, Home, Cripto, Medidas, Login, Perfil, Cadastro};
+export {Moedas, Home, MoneyConv, Medidas, Login, Perfil, Cadastro, MedConv};

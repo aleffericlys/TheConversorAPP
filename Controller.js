@@ -98,63 +98,12 @@ app.get('/createFav', async (req, res)=>{
 
 
 
-const apiCripto = 'https://api.binance.com/api/v3/ticker/price?symbol='
-
-async function getCriptoCot(de, para) {
-	try {
-	  const response = await fetch(apiCripto+de+para);
-  
-	  if (!response.ok) {
-		throw new Error(`Erro de rede: ${response.status}`);
-	  }
-  
-	  const data = await response.json();
-	  console.log(data);
-	} catch (error) {
-	  console.error('Erro durante a requisição:', error);
-	}
-  }
-
-app.get('/apiCrip', async (req, res)=>{
-	getCriptoCot('BTC', 'USDT');
-});
-
-
-
-const apiMoedas = 'https://economia.awesomeapi.com.br/last/'
-
-async function getMoneyCot(de, para) {
-	console.log(apiMoedas+de+'-'+para);
-	try {
-	  const response = await fetch(apiMoedas+de+'-'+para);
-  
-	  if (!response.ok) {
-		throw new Error(`Erro de rede: ${response.status}`);
-	  }
-  
-	  const data = await response.json();
-	  var cota = de+para;
-	  console.log(data[de+para].bid);
-	} catch (error) {
-	  console.error('Erro durante a requisição:', error);
-	}
-  }
-
-// app.get('/apiMoney', async (req, res)=>{
-// 	getMoneyCot('USD', 'BRL');
-// });
-
-
 let port=process.env.PORT || 3000;
 app.listen(port,(req, res)=>{
 	console.log('Servidor rodando na porta '+port);
 });
 
 
-function carregarJsonLocal() {
-	let meuJSON = require('./assets/json/conversoesMedidas.json')
-	console.log(meuJSON);
-}
 
 
 //   app.get('/testeJson', async (req, res)=>{

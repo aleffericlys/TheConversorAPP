@@ -24,7 +24,7 @@
 	"forca":
 		["newton", "kilonewton", "grama_forca", "quilograma_forca", "tonelada_forca", "libra_forca"],
 	"pressao":
-		["pascal", "quilopascal", "bar", "libra_por_polegada_quadrada", "milimetro_de_mercurio", "centimetro_de_mercurio", "polegada_de_mercurio"],
+		["atmosfera", "pascal", "quilopascal", "bar", "libra_por_polegada_quadrada", "milimetro_de_mercurio", "centimetro_de_mercurio", "polegada_de_mercurio"],
 	"potencia":
 		["watt", "quilowatt", "cavalo_vapor", "british_thermal_unit_por_hora", "caloria_por_segundo", "libra_por_pe_por_minuto"],
 	"energia":

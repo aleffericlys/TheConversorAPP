@@ -15,7 +15,7 @@ export default function Login({navigation}) {
 
 	async function sendForm()
 	{
-		let response=await fetch('http://192.168.1.9:3000/login', {
+		let response=await fetch('http://192.168.1.10:3000/login', {
 			method: 'POST',
 			headers: {
 			  Accept: 'application/json',
@@ -45,7 +45,8 @@ export default function Login({navigation}) {
 	}
 
 	return (
-			<KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style={[css.container, css.darkbg]}>
+		<View style={[css.darkbg, css.container]}>
+			{/* <KeyboardAvoidingView behavior={Platform.OS == "android" ? "padding" : "height"} style={[css.container, css.darkbg]}> */}
 			<View style={css.logo_login}>
 				<Image source={require('../assets/icon.png')}/>
 			</View>
@@ -55,22 +56,23 @@ export default function Login({navigation}) {
 			</View>
 
 			<View style={css.login_form}>
-				<TextInput style={css.login_input} placeholder='Email' onChangeText={text=>setEmail(text)}/>
-				<TextInput style={css.login_input} placeholder='Senha' secureTextEntry={true} onChangeText={text=>setPassword(text)}/>
-				<TouchableOpacity style={css.login_button} onPress={() => sendForm()}>
+				<TextInput style={[css.inputConversao, {width: '100%'}]} placeholder='Email' onChangeText={text=>setEmail(text)}/>
+				<TextInput style={[css.inputConversao, {width: '100%'}]} placeholder='Senha' secureTextEntry={true} onChangeText={text=>setPassword(text)}/>
+				<TouchableOpacity style={[css.login_button, {flex: 0, width: '100%', height: 50}]} onPress={() => sendForm()}>
 					<Text style={css.textButtonLogin}>Entrar</Text>
 				</TouchableOpacity>
-			</View>
 
-			<View style={css.login_form}>
-			<Text>Ainda não tem conta?</Text>
-			<TouchableOpacity
-				onPress={() => navigation.navigate('Cadastro')}
-			>
-        		{/* <MaterialIcons name="contact-page" size={30} color="#000" /> */}
-				<Text style={css.criarconta}>Cadastre-se</Text>
-      		</TouchableOpacity>
+				<View>
+				<Text>Ainda não tem conta?</Text>
+				<TouchableOpacity
+					onPress={() => navigation.navigate('Cadastro')}
+					>
+					{/* <MaterialIcons name="contact-page" size={30} color="#000" /> */}
+					<Text style={css.criarconta}>Cadastre-se</Text>
+				</TouchableOpacity>
+				</View>
 			</View>
-		</KeyboardAvoidingView>
+		{/* </KeyboardAvoidingView> */}
+		</View>
 	)
 }

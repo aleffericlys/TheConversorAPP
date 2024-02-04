@@ -7,7 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
-import {Moedas, Home, Medidas, Cripto, Login, Perfil, Cadastro} from './index';
+import {Moedas, Home, Medidas, MoneyConv, Login, Perfil, Cadastro, MedConv} from './index';
 import { View } from 'react-native';
 
 const Tab = createMaterialTopTabNavigator();
@@ -25,7 +25,7 @@ const HomeTabNavigator = () => {
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
-					headerTintColor: '#fff',
+					headerTintColor: '#333',
 					headerTitleStyle: {
 						fontWeight: 'bold',
 						fontSize: 25,
@@ -41,7 +41,7 @@ const HomeTabNavigator = () => {
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
-					headerTintColor: '#fff',
+					headerTintColor: '#333',
 					headerTitleStyle: {
 						fontWeight: 'bold',
 						fontSize: 25,
@@ -57,7 +57,7 @@ const HomeTabNavigator = () => {
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
-					headerTintColor: '#fff',
+					headerTintColor: '#333',
 					headerTitleStyle: {
 						fontWeight: 'bold',
 						fontSize: 25,
@@ -73,7 +73,7 @@ const HomeTabNavigator = () => {
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
-					headerTintColor: '#fff',
+					headerTintColor: '#333',
 					headerTitleStyle: {
 						fontWeight: 'bold',
 						fontSize: 25,
@@ -88,6 +88,22 @@ const MoedasTabNavigator = () => {
 	return (
 		<Stack.Navigator>
 			<Stack.Screen
+				name="Cripto"
+				component={MoneyConv}
+				options={{
+					headerShown: true,
+					title: 'Conversor de Moedas',
+					headerStyle: {
+						backgroundColor: '#62b013',
+					},
+					headerTintColor: '#333',
+					headerTitleStyle: {
+						fontWeight: 'bold',
+						fontSize: 25,
+					},
+				}}
+			/>
+			<Stack.Screen
 				name="Moedas"
 				component={Moedas}
 				options={{
@@ -96,7 +112,7 @@ const MoedasTabNavigator = () => {
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
-					headerTintColor: '#fff',
+					headerTintColor: '#333',
 					headerTitleStyle: {
 						fontWeight: 'bold',
 						fontSize: 25,
@@ -106,28 +122,7 @@ const MoedasTabNavigator = () => {
 		</Stack.Navigator>
 	);
 };
-const CriptoTabNavigator = () => {
-	return (
-		<Stack.Navigator>
-			<Stack.Screen
-				name="Cripto"
-				component={Cripto}
-				options={{
-					headerShown: true,
-					title: 'Conversor de Cripto',
-					headerStyle: {
-						backgroundColor: '#62b013',
-					},
-					headerTintColor: '#fff',
-					headerTitleStyle: {
-						fontWeight: 'bold',
-						fontSize: 25,
-					},
-				}}
-			/>
-		</Stack.Navigator>
-	);
-};
+
 const MedidasTabNavigator = () => {
 	return (
 		<Stack.Navigator>
@@ -140,7 +135,23 @@ const MedidasTabNavigator = () => {
 					headerStyle: {
 						backgroundColor: '#62b013',
 					},
-					headerTintColor: '#fff',
+					headerTintColor: '#333',
+					headerTitleStyle: {
+						fontWeight: 'bold',
+						fontSize: 25,
+					},
+				}}
+			/>
+			<Stack.Screen
+				name="MedConv"
+				component={MedConv}
+				options={{
+					headerShown: true,
+					title: 'Conversor de Medidas',
+					headerStyle: {
+						backgroundColor: '#62b013',
+					},
+					headerTintColor: '#333',
 					headerTitleStyle: {
 						fontWeight: 'bold',
 						fontSize: 25,
@@ -154,13 +165,20 @@ const MedidasTabNavigator = () => {
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator 
+      <Tab.Navigator
 		tabBarPosition= 'bottom'
 		screenOptions={{
-			tabBarActiveTintColor: '#62b013',
-			tabBarInactiveTintColor: 'gray',
+			keyoboardAvoidingViewEnabled: true,
+			tabBarActiveTintColor: '#fff',
+			tabBarInactiveTintColor: '#333',
 			tabBarLabelStyle: { fontSize: 12 },
-			tabBarPressColor: '#62b013',
+			// tabBarPressColor: '#000',
+			tabBarIndicatorStyle: {
+				backgroundColor: '#fff',
+			},
+			tabBarIndicatorContainerStyle: {
+				backgroundColor: '#62b013',
+			},
 			headerShown: true,
 			swipeEnabled: true,
 		}}
@@ -186,7 +204,7 @@ const Navigation = () => {
 				),
 			}}
 		/>
-		<Tab.Screen
+		{/* <Tab.Screen
 			name="cripto"
 			component={CriptoTabNavigator}
 			options={{
@@ -194,7 +212,7 @@ const Navigation = () => {
 					<MaterialCommunityIcons name="bitcoin" size={24} color={color} />
 					),
 				}}
-		/>
+		/> */}
 		<Tab.Screen
 			name="medidas"
 			component={MedidasTabNavigator}

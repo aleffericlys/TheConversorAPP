@@ -39,21 +39,16 @@ export default function Cripto() {
 			const data = await response.json();
 			setCotacao(data.price);
 		} catch (error) {
-			console.error('Erro ao buscar dados:', error);
+			console.log("Erro na requisição da API")
 		}
 	}
 
 	useFocusEffect(
 		React.useCallback(() => {
-		//   
-		console.log('Tela1 está em foco');
 		  // Adicione sua lógica específica aqui
 		  setL1Options(CriptoNames)
-		  return () => {
-			console.log('Tela1 não está mais em foco');
-			setL1Options(CriptoNames)
-			// Função de limpeza (se necessário)
-		  };
+		  setl1SelectedValue(CriptoNames[0].value)
+		  setl2SelectedValue(CriptoNames[0].value)
 		}, [])
 	  );
 
@@ -70,7 +65,6 @@ export default function Cripto() {
 	}, [label1Options]);
 
 	useEffect(() => {
-		console.log("quando altera o l1:",l1SelectedValue, l2SelectedValue)
 		if (l1SelectedValue != null){
 			setL2Options(Label2Options(l1SelectedValue))
 		}
@@ -111,7 +105,6 @@ export default function Cripto() {
 	}, [input2Value]);
 
 	useEffect(() => {
-		console.log(l1SelectedValue, l2SelectedValue)
 		setInput1Value('1')
 	}, [cotacao]);
 
@@ -119,10 +112,12 @@ export default function Cripto() {
 	return (
 		
 		<View style={[css.container, css.darkbg]}>
-			<Text style={css.textPage}>tela de cripto Moedas</Text>
-			<Text style={{marginLeft: -220, color: 'blue', fontSize: 25}}>Selecione a moeda:</Text>
+			<View style={[css.rowContainer, {marginBottom: -20, marginTop: -25}]}>
+				<Text style={[{marginLeft: -150, color: '#62b013', fontSize: 20}]}>Selecione a moeda</Text>
+				<Text style={[{marginLeft: 50, color: '#62b013', fontSize: 20}]}>Altere o valor</Text>
+			</View>
 			<View style={css.rowContainer}>
-
+			<View style={[css.borda]}>
 				<Picker
 					style={css.picker}
 					selectedValue={l1SelectedValue}
@@ -135,7 +130,7 @@ export default function Cripto() {
 						<Picker.Item style={css.textButtonLogin} key={index} label={option.index} value={option.value} />
 					))}
 				</Picker>
-
+				</View>
 				<TextInput
 					style={css.inputConversao}
 					keyboardType='numeric'
@@ -147,8 +142,12 @@ export default function Cripto() {
 				
 				}/>
 			</View>
-			<Text style={{marginLeft: -220, color: 'blue', fontSize: 25}}>Selecione a moeda:</Text>
+			<View style={[css.rowContainer, {marginBottom: -20, marginTop: -25}]}>
+				<Text style={[{marginLeft: -150, color: '#62b013', fontSize: 20}]}>Selecione a moeda</Text>
+				<Text style={[{marginLeft: 50, color: '#62b013', fontSize: 20}]}>Altere o valor</Text>
+			</View>
 			<View style={css.rowContainer}>
+			<View style={[css.borda]}>
 				<Picker
 					style={css.picker}
 					onValueChange={(itemValue) => {
@@ -162,6 +161,7 @@ export default function Cripto() {
 					
 
 				</Picker>
+				</View>
 				<TextInput
 					style={css.inputConversao}
 					keyboardType='numeric'

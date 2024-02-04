@@ -645,6 +645,7 @@
   },
   "pressao": {
     "pascal": {
+	  "atmosfera": "var / 101325",
       "quilopascal": "var / 1000",
       "bar": "var / 100000",
       "libra_por_polegada_quadrada": "var / 6895",
@@ -653,6 +654,7 @@
       "polegada_de_mercurio": "var / 3386"
     },
     "quilopascal": {
+	  "atmosfera": "var / 101.325",
       "pascal": "var * 1000",
       "bar": "var / 100",
       "libra_por_polegada_quadrada": "var * 0.145038",
@@ -661,6 +663,7 @@
       "polegada_de_mercurio": "var * 0.2953"
     },
     "bar": {
+	  "atmosfera": "var / 1.01325",
       "pascal": "var * 100000",
       "quilopascal": "var * 100",
       "libra_por_polegada_quadrada": "var * 14.5038",
@@ -669,6 +672,7 @@
       "polegada_de_mercurio": "var * 29.53"
     },
     "libra_por_polegada_quadrada": {
+	  "atmosfera": "var / 14.696",
       "pascal": "var * 6895",
       "quilopascal": "var * 6.895",
       "bar": "var / 14.504",
@@ -677,6 +681,7 @@
       "polegada_de_mercurio": "var * 2.036"
     },
     "milimetro_de_mercurio": {
+	  "atmosfera": "var / 760",
       "pascal": "var * 133",
       "quilopascal": "var / 7.50062",
       "bar": "var / 750.062",
@@ -685,6 +690,7 @@
       "polegada_de_mercurio": "var / 25.4"
     },
     "centimetro_de_mercurio": {
+	  "atmosfera": "var / 7600",
       "pascal": "var * 1333",
       "quilopascal": "var * 1.333",
       "bar": "var / 10",
@@ -693,12 +699,22 @@
       "polegada_de_mercurio": "var / 2.54"
     },
     "polegada_de_mercurio": {
+	  "atmosfera": "var / 29.9212",
       "pascal": "var * 3386",
       "quilopascal": "var / 0.2953",
       "bar": "var / 29.53",
       "libra_por_polegada_quadrada": "var * 2.036",
       "milimetro_de_mercurio": "var * 25.4",
       "centimetro_de_mercurio": "var * 2.54"
+    },
+    "atmosfera": {
+      "pascal": "var * 101325",
+      "quilopascal": "var * 101.325",
+      "bar": "var * 1.01325",
+      "libra_por_polegada_quadrada": "var * 14.696",
+      "milimetro_de_mercurio": "var * 760",
+      "centimetro_de_mercurio": "var * 7600",
+      "polegada_de_mercurio": "var * 29.9212"
     }
   },
   "energia": {
@@ -892,7 +908,7 @@
       "grau": "var * 57.2958",
       "grado": "var * 63.661977",
       "minuto_de_arco": "var * 3437.74677",
-      "segundo_de_arco": "var * 206264.806"
+      "segundo_de_arco": "var * 206264.80624709635515647335733078"
     },
     "grado": {
       "grau": "var * 0.9",
@@ -908,7 +924,7 @@
     },
     "segundo_de_arco": {
       "grau": "var / 3600",
-      "radiano": "var * 3.141592653589793 / (180 * 3600)",
+      "radiano": "var * 206264.80624709635515647335733078",
       "grado": "var / 3240",
       "minuto_de_arco": "var / 60"
     }
